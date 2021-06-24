@@ -3,7 +3,7 @@ function ajax(cmd) {
     var xhr = new XMLHttpRequest();
 
 
-    xhr.open("GET", "http://192.168.118.126/cgi-bin/docker.py?command="+cmd, true);
+    xhr.open("GET", "http://192.168.107.126/cgi-bin/gui.py?command="+cmd, true);
 
     xhr.send();
 
